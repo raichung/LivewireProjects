@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
             ['id' => '5', 'name' => 'North America',],
         ];
 
-        foreach ($continents as $continent) {id
+        foreach ($continents as $continent) {
             \App\Models\Continent::factory()->create($continent)
                 ->each(function ($c) {
                     $c -> countries()->saveMany(Country::factory(10)->make());
